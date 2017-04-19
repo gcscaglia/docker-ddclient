@@ -14,11 +14,11 @@ The image itself is very simple exposing no network ports and only a single volu
 
 ```
 docker run \
-    --detatch \
+    --detach \
     --name ddclient \
     --restart always \
     --volume /etc/ddclient:/etc/ddclient:rw \
-    gcscaglia/ddclient:latest
+    gcscaglia/docker-ddclient:latest
 ```
 
 With the above comand, `ddclient` will run in daemon mode, start with the system and read it's configurations from `/etc/ddclient/ddclient.conf` in the host's filesystem.
@@ -37,12 +37,12 @@ If your `ddclient.conf` determines your IP using `web` method, this difference i
 
 ```
 docker run \
-    --detatch \
+    --detach \
     --name ddclient \
     --restart always \
     --volume /etc/ddclient:/etc/ddclient:rw \
     --net host \
-    gcscaglia/ddclient:latest
+    gcscaglia/docker-ddclient:latest
 ```
 
 With `host` networking, all host interfaces are exposed directly to your container and can be used as-is.
