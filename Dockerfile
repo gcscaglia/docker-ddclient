@@ -15,7 +15,7 @@ ENTRYPOINT ["/sbin/tini", "--"]
 
 # Install ddclient using simple script:
 COPY install-ddclient.sh /tmp/
-RUN chmod +x /tmp/install-ddclient.sh && /tmp/install-ddclient.sh
+RUN /tmp/install-ddclient.sh
 
 # Set cmd for ddclient:
 CMD ["/usr/bin/ddclient", "-daemon", "300", "-foreground", "-noquiet", "-debug"]
